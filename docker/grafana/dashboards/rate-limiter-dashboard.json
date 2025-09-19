@@ -1,0 +1,41 @@
+{
+  "panels": [
+    {
+      "type": "graph",
+      "title": "Rate Limit Requests Allowed",
+      "targets": [
+        {
+          "expr": "rate_limiter_requests_allowed_total",
+          "legendFormat": "Allowed",
+          "refId": "A"
+        }
+      ],
+      "datasource": "Prometheus",
+      "id": 1
+    },
+    {
+      "type": "graph",
+      "title": "Rate Limit Requests Denied",
+      "targets": [
+        {
+          "expr": "rate_limiter_requests_denied_total",
+          "legendFormat": "Denied",
+          "refId": "B"
+        }
+      ],
+      "datasource": "Prometheus",
+      "id": 2
+    },
+    {
+      "type": "stat",
+      "title": "Current Tokens Available",
+      "targets": [
+        {
+          "expr": "rate_limiter_tokens_available",
+          "refId": "C"
+        }
+      ],
+      "id": 3
+    }
+  ]
+}
